@@ -69,7 +69,7 @@ h3 {
     transparent 100%
   );
   border-image-slice: 1;
-  transition: border-image-source 0.5s ease-in-out;
+  transition: border-image-source 0.5s ease;
 }
 .glow-container::before,
 .glow-container::after {
@@ -84,7 +84,7 @@ h3 {
   border-image: linear-gradient(155deg, transparent 0%, transparent 100%);
   filter: blur(5px);
   border-image-slice: 1;
-  transition: border-image 0.5s ease-in-out;
+  transition: border-image 0.5s ease;
 }
 .glow-container:hover {
   border-image-source: linear-gradient(
@@ -207,6 +207,20 @@ h3 {
   height: 48px;
   border-radius: 100%;
   border: none;
+  transition: background-color 0.3s ease;
+}
+.theme-light {
+  color: var(--primary-green);
+  transition: color 0.3s ease;
+}
+/* This is probably a theme state but I just made it a hover effect just to have the style for it*/
+.is-theme:hover {
+  background-color: var(--primary-green);
+  transition: background-color 0.3s ease;
+}
+.is-theme:hover .theme-light {
+  color: var(--back-gray-2);
+  transition: color 0.3s ease;
 }
 .header-btn .discord-btn {
   color: var(--text-white);
@@ -442,6 +456,7 @@ h3 {
   color: var(--text-gray-1);
 }
 .read-more-btn {
+  font-family: var(--font-bakbak);
   color: var(--text-white);
   height: 48px;
   padding: 12px 24px;
@@ -543,7 +558,6 @@ h3 {
   color: var(--text-gray-1);
 }
 .road-map-stage-info .read-more-btn {
-  display: block;
   width: max-content;
   margin-top: 30px;
 }
@@ -1625,6 +1639,7 @@ h3 {
   border: 1px solid var(--primary-green);
   background-color: transparent;
   color: var(--text-white);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 button:hover,
 a:hover {
@@ -1635,6 +1650,7 @@ a:hover {
 .collection-forward-btn:hover {
   background-color: var(--primary-green);
   color: var(--back-gray-1);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .forward-arrow-btn,
 .back-arrow-btn {
@@ -1643,4 +1659,51 @@ a:hover {
 .forward-arrow-btn:hover,
 .back-arrow-btn:hover {
   color: var(--primary-green);
+}
+.underline-hover {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+.underline-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-white);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: bottom right;
+}
+.underline-hover:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.arrow-hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  transition: padding-right 0.3s ease;
+}
+.arrow-hover::after {
+  content: url("../imgs/read-more-arrow.svg");
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, right 0.3s ease;
+  width: 20px;
+}
+.arrow-hover:hover {
+  padding-right: 40px;
+}
+.arrow-hover:hover::after {
+  opacity: 1;
+  right: 8px;
 }
