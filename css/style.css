@@ -42,6 +42,9 @@ body::-webkit-scrollbar {
   padding: 0;
   box-sizing: border-box;
 }
+.new-row{
+  display: block;
+}
 a {
   text-decoration: none;
 }
