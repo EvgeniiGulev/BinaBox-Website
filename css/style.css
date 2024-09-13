@@ -42,7 +42,7 @@ body::-webkit-scrollbar {
   padding: 0;
   box-sizing: border-box;
 }
-.new-row{
+.new-row {
   display: block;
 }
 a {
@@ -219,11 +219,9 @@ h3 {
 /* This is probably a theme state but I just made it a hover effect just to have the style for it*/
 .is-theme:hover {
   background-color: var(--primary-green);
-  transition: background-color 0.3s ease;
 }
 .is-theme:hover .theme-light {
   color: var(--back-gray-2);
-  transition: color 0.3s ease;
 }
 .header-btn .discord-btn {
   color: var(--text-white);
@@ -281,6 +279,7 @@ h3 {
   margin-top: 24px;
   display: grid;
   gap: 48px;
+  width: 100%;
   max-width: 373px;
 }
 .main-info-text {
@@ -399,6 +398,7 @@ h3 {
 .about-text-container {
   margin-top: 100px;
   text-align: center;
+  width: 100%;
   max-width: 930px;
   display: grid;
   gap: 16px;
@@ -419,9 +419,11 @@ h3 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  width: 100%;
   max-width: 1170px;
   gap: 30px;
   position: relative;
+  counter-reset: card-counter;
 }
 .about-card-item {
   background-color: var(--text-gray-3);
@@ -430,7 +432,23 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: relative;
 }
+.about-card-item::before {
+  content: counter(card-counter, decimal-leading-zero);
+  counter-increment: card-counter;
+  position: absolute;
+  top: -200px;
+  left: -425px;
+  font-family: var(--font-bakbak);
+  font-size: 6000%;
+  scale: .078;
+  color: transparent;
+  -webkit-text-stroke: 8px var(--text-green);
+  text-shadow: none;
+  z-index: 1;
+}
+
 .about-card-heading-container {
   position: relative;
   height: 66px;
@@ -453,7 +471,6 @@ h3 {
 .about-card-item .about-card-text {
   margin-top: 30px;
   width: 510px;
-
   font-size: 18px;
   line-height: 1.5556;
   color: var(--text-gray-1);
@@ -519,6 +536,7 @@ h3 {
 }
 .road-map-details-container {
   margin-top: 60px;
+  width: 100%;
   max-width: 1410px;
   height: 566px;
   background-color: var(--transparent-gray-2);
@@ -527,6 +545,7 @@ h3 {
   padding: 40px;
 }
 .road-map-inner-container {
+  width: 100%;
   max-width: 1407px;
 }
 .road-map-imgs {
@@ -577,12 +596,14 @@ h3 {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 .phase-line {
   list-style-type: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   max-width: 1107px;
   height: 66px;
   gap: 264px;
@@ -619,16 +640,16 @@ h3 {
   height: 2px;
   background-image: linear-gradient(
     to right,
-    var(--text-gray-2) 34%,
-    transparent 34%
+    var(--text-gray-2) 37%,
+    transparent 37%
   );
   background-color: var(--transparent-gray-3);
   transform: translateY(-50%);
 }
-.phase-stage:nth-child(1) .phase-stage-text {
+.phase-stage.active-phase-stage .phase-stage-text {
   color: var(--text-white);
 }
-.phase-stage:nth-child(1) .phase-ellipse {
+.phase-stage.active-phase-stage .phase-ellipse {
   background-color: var(--text-green);
   box-shadow: 0 0 0 7.5px var(--transparent-green);
 }
@@ -724,6 +745,7 @@ h3 {
   color: var(--text-white);
 }
 .partner-logos {
+  width: 100%;
   max-width: 1410px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -960,7 +982,7 @@ h3 {
   line-height: 1.43;
   color: var(--text-gray-2);
 }
-.banner-item:nth-child(2) .banner-link {
+.banner-link.active-page {
   color: #21e786;
 }
 .banner-list li:first-child {
@@ -1040,6 +1062,7 @@ h3 {
   margin-right: 8px;
   position: relative;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 .custom-checkbox::before {
   content: "";
@@ -1062,7 +1085,6 @@ h3 {
 }
 .catalog-header {
   width: 1050px;
-
   display: flex;
   justify-content: space-between;
 }
@@ -1144,6 +1166,7 @@ h3 {
 }
 .catalog-container .catalog-item {
   background: var(--transparent-gray-2);
+  width: 100%;
   max-width: 330px;
 }
 .catalog-container .nft-card-link {
@@ -1460,6 +1483,7 @@ h3 {
 }
 .product-container {
   display: flex;
+  width: 100%;
   max-width: 1410px;
   justify-content: space-between;
   margin: 100px auto;
@@ -1480,6 +1504,8 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(26px);
+  
 }
 .countdown-heading {
   font-family: var(--font-bakbak);
@@ -1643,6 +1669,10 @@ h3 {
   background-color: transparent;
   color: var(--text-white);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+button,
+a {
+  transition: opacity 0.3s ease;
 }
 button:hover,
 a:hover {
