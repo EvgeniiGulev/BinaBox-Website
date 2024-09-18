@@ -370,8 +370,8 @@ h3 {
   gap: 20px;
   transition: background-color 0.3s ease;
 }
-.nft-content-container:hover{
-  background-color: #FFFFFF1A;
+.nft-content-container:hover {
+  background-color: #ffffff1a;
 }
 .nft-card .nft-card-link {
   font-family: var(--font-bakbak);
@@ -979,6 +979,7 @@ h3 {
   list-style-type: none;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .banner-item .banner-link {
   font-family: var(--font-bakbak);
@@ -989,16 +990,10 @@ h3 {
 .banner-link.active-page {
   color: #21e786;
 }
-.banner-list li:first-child {
-  display: flex;
-}
 .banner-list li:first-child::after {
-  display: block;
-  margin: 0px 8px;
-  content: "";
-  width: 2px;
-  height: 16px;
-  background-color: var(--text-gray-2);
+  content: "|";
+  margin-right: 4px;
+  color: var(--text-white);
 }
 .catalog-section {
   width: 1410px;
@@ -1595,9 +1590,6 @@ h3 {
   font-family: var(--font-bakbak);
   margin-top: 40px;
   width: 620px;
-
-  top: 991px;
-  left: 1045px;
   padding: 16px 24px;
   gap: 8px;
   display: flex;
@@ -1672,14 +1664,8 @@ h3 {
   color: var(--text-white);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-button,
-a {
-  transition: opacity 0.3s ease;
-}
-button:hover,
-a:hover {
+button:hover{
   cursor: pointer;
-  opacity: 0.7;
 }
 .collection-back-btn:hover,
 .collection-forward-btn:hover {
@@ -1717,31 +1703,6 @@ a:hover {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-.arrow-hover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  position: relative;
-  transition: padding-right 0.3s ease;
-}
-.arrow-hover::after {
-  content: url("../imgs/read-more-arrow.svg");
-  position: absolute;
-  right: -25px;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: opacity 0.3s ease, right 0.3s ease;
-  width: 20px;
-}
-.arrow-hover:hover {
-  padding-right: 40px;
-}
-.arrow-hover:hover::after {
-  opacity: 1;
-  right: 8px;
-}
 
 .community-discord-btn,
 .discord-btn,
@@ -1760,7 +1721,21 @@ a:hover {
   outline: 2px solid #5865f2;
 }
 
-.connect-btn:hover, .connect-wallet-btn:hover{
+.connect-btn:hover,
+.connect-wallet-btn:hover, .community-whitelist-btn:hover{
   background-color: #21e786cc;
   outline: 2px solid #21e786cc;
+}
+
+.read-more-btn:hover, .whitelist-btn:hover {
+  background-color: #21e7861a;
+}
+
+.product-buy-btn:hover{
+  opacity: 0.7;
+}
+
+.discord-link:hover,.twitter-link:hover{
+  background-color: var(--transparent-gray-3);
+  backdrop-filter: blur(10px);
 }
