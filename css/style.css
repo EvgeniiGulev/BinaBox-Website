@@ -37,6 +37,12 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+button{
+  border:0;
+}
+button:hover{
+  cursor: pointer;
+}
 * {
   margin: 0;
   padding: 0;
@@ -1663,9 +1669,6 @@ h3 {
   background-color: transparent;
   color: var(--text-white);
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-button:hover{
-  cursor: pointer;
 }
 .collection-back-btn:hover,
 .collection-forward-btn:hover {
