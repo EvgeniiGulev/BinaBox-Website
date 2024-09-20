@@ -37,10 +37,10 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
-button{
-  border:0;
+button {
+  border: 0;
 }
-button:hover{
+button:hover {
   cursor: pointer;
 }
 * {
@@ -204,12 +204,19 @@ h3 {
   align-items: center;
   background: var(--text-gray-3);
 }
-.discord-btn,
 .connect-btn {
   padding: 12px 24px;
   gap: 8px;
-  width: 147px;
+  width: 145px;
   height: 48px;
+  border: 2px solid #21e786cc;
+}
+.discord-btn {
+  padding: 12px 24px;
+  gap: 8px;
+  width: 145px;
+  height: 48px;
+  border: 2px solid var(--back-gray-1);
 }
 .is-theme {
   width: 48px;
@@ -295,11 +302,10 @@ h3 {
 }
 .total-item-num {
   width: 117px;
-
   font-size: 44px;
   line-height: 1.2727;
   color: var(--text-white);
-  text-shadow: 0px 4px 13px var(--text-white);
+  text-shadow: 0px 4px 13px #ffffff66;
 }
 .item-num-subheading {
   font-size: 16px;
@@ -313,11 +319,10 @@ h3 {
 }
 .profiles-whitelist-num {
   width: 117px;
-
   font-size: 44px;
   line-height: 1.2727;
   color: var(--text-white);
-  text-shadow: 0px 4px 13px var(--text-white);
+  text-shadow: 0px 4px 13px #ffffff66;
 }
 .profiles-whitelist-subheading {
   font-size: 16px;
@@ -330,10 +335,10 @@ h3 {
 }
 .connect-wallet-btn {
   font-family: var(--font-bakbak);
-  width: 181px;
+  width: 183px;
+  border: 2px solid #21e786cc;
   height: 48px;
   padding: 12px 24px;
-  gap: 8px;
   font-size: 16px;
   line-height: 1.2727;
   background-color: var(--text-green);
@@ -867,19 +872,21 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 147px;
+  width: 145px;
   height: 48px;
   padding: 12px 24px;
   gap: 8px;
   background-color: var(--primary-violet);
   color: var(--text-white);
+  border: 2px solid #5865f2;
 }
 .community-whitelist-btn {
   font-family: var(--font-bakbak);
-  width: 168px;
+  white-space: nowrap;
+  width: 166px;
+  border: 2px solid #21e786cc;
   height: 48px;
   padding: 12px 24px;
-  gap: 8px;
   background-color: var(--text-green);
   color: var(--text-gray-3);
 }
@@ -901,7 +908,7 @@ h3 {
   font-family: var(--font-bakbak);
   border: 0;
   width: 154px;
-
+  border: 2px solid #21e786cc;
   padding: 12px 24px;
   background-color: var(--primary-green);
   color: var(--text-black-1);
@@ -1509,7 +1516,7 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(26px);
+  backdrop-filter: blur(13px);
 }
 .countdown-heading {
   font-family: var(--font-bakbak);
@@ -1706,39 +1713,37 @@ h3 {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-
 .community-discord-btn,
 .discord-btn,
 .connect-btn,
-.connect-wallet-btn {
+.connect-wallet-btn,
+.main-whitelist-btn,
+.read-more-btn,
+.home-page .subscribe-btn,
+.community-whitelist-btn {
   transition: background-color 0.3s ease;
 }
-
 .discord-btn:hover {
   background-color: var(--text-gray-4);
-  outline: 2px solid var(--back-gray-1);
 }
-
 .community-discord-btn:hover {
   background-color: #5865f2cc;
-  outline: 2px solid #5865f2;
 }
-
 .connect-btn:hover,
-.connect-wallet-btn:hover, .community-whitelist-btn:hover{
+.connect-wallet-btn:hover,
+.community-whitelist-btn:hover,
+.home-page .subscribe-btn:hover {
   background-color: #21e786cc;
-  outline: 2px solid #21e786cc;
 }
-
-.read-more-btn:hover, .whitelist-btn:hover {
+.read-more-btn:hover,
+.whitelist-btn:hover {
   background-color: #21e7861a;
 }
-
-.product-buy-btn:hover{
+.product-buy-btn:hover {
   opacity: 0.7;
 }
-
-.discord-link:hover,.twitter-link:hover{
+.discord-link:hover,
+.twitter-link:hover {
   background-color: var(--transparent-gray-3);
   backdrop-filter: blur(10px);
 }
